@@ -1,0 +1,57 @@
+﻿@page "/"
+
+@using CondominioApp.Data
+@using CondominioApp.Shared
+
+@inject NavigationManager NavigationManager
+@inject UserRepository userRepository
+
+<form method="post">
+    <h3 class="display-4">Acesse sua conta</h3>
+    <div class="form-group">
+        <label class="form-label">E-mail</label>
+        <input type="email" @bind-value="@user.Email" placeholder="seu-email@host.com" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">Senha</label>
+        <input type="password" @bind-value="@user.Password" placeholder="sua senha" class="form-control" style="padding-bottom: 10px;" />
+    </div>
+    <div class="form-group">
+        <label style="word-wrap:break-word" >
+            <input type="checkbox" checked="checked" />
+            Salvar Acesso 
+        </label>
+        <p>&nbsp;</p>
+    </div>
+    <div class="form-group">
+        <p>
+            <a href="/">Recuperar a  Senha</a>
+        </p>
+        <p>&nbsp;</p>
+        <p>@user.Email</p>
+        <p>@user.Password</p>
+    </div>
+    <div class="d-grid gap-2">
+        <button @onclick="OnAccessButtonClick" type="submit" class="btn btn-lg btn-success">Acessar</button>
+    </div>
+</form>
+
+@code {
+    private User user { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        user = new User();
+        userRepository = new UserRepository();
+        await Task.FromResult(1);
+    }
+
+    private void OnAccessButtonClick()
+    {
+        user = userRepository.CreateOrLogin(user);
+        System.Console.WriteLine(user.LastAccess.ToString());
+        Task.Delay(50000);
+        NavigationManager.NavigateTo($"/user-details/@user.Id", forceLoad: true);
+    }
+
+}

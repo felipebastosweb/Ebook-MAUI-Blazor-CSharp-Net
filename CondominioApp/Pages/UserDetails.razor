@@ -1,0 +1,27 @@
+﻿@page "/user-details/{userId}"
+
+@using CondominioApp.Data
+@using CondominioApp.Shared
+
+@inject UserRepository userRepository
+
+<div>
+    <h3>UserDetails</h3>
+    <p>@user.Email</p>
+    <p>@user.Password</p>
+    <p>@user.LastAccess.ToShortDateString()</p>
+</div>
+
+@code {
+    [Parameter]
+    public int userId { get; set; }
+    private User user  { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        user = new User();
+        userRepository = new UserRepository();
+        user = userRepository.GetUser(userId);
+        await Task.FromResult(1);
+    }
+}

@@ -1,0 +1,41 @@
+﻿@page "/users"
+
+@using CondominioApp.Data
+@using CondominioApp.Shared
+
+@inject UserRepository userRepository
+
+<h3>Users</h3>
+
+@if (UserList.Count() < 1)
+{
+    <p><em>Nenhum usuário no banco de dados.</em></p>
+}
+else
+{
+    <table class="table">
+        <tbody>
+            @foreach (var user in UserList)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Email</td>
+                    <td>@user.Password</td>
+                    <td>@user.LastAccess.ToString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<User> UserList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        userRepository = new UserRepository();
+        UserList = userRepository.GetUsers();
+        await Task.FromResult(1);
+    }
+
+}
