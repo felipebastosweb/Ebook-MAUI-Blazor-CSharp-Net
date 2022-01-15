@@ -19,9 +19,8 @@ else
             {
                 <tr>
                     <td>@user.Id</td>
-                    <td>@user.Email</td>
-                    <td>@user.Password</td>
-                    <td>@user.LastAccess.ToString()</td>
+                    <td><a href="user/@user.Id">@user.Email</a></td>
+                    <td><button @onclick="()=>OnDeleteButtonClick(user)" class"btn btn-danger">Apagar</button></td>
                 </tr>
             }
         </tbody>
@@ -36,6 +35,11 @@ else
         userRepository = new UserRepository();
         UserList = userRepository.GetUsers();
         await Task.FromResult(1);
+    }
+
+    public void OnDeleteButtonClick(User user)
+    {
+        var rows = userRepository.DeleteUser(user);
     }
 
 }

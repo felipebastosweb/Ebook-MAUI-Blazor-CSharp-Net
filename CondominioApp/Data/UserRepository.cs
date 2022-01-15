@@ -47,5 +47,10 @@ namespace CondominioApp.Data
         {
             return db.Table<User>().ToList();
         }
+
+        public int DeleteUser(User user)
+        {
+            return db.Delete(user);
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿@page "/user-details/{userId}"
+﻿@page "/user/{userId}"
 
 @using CondominioApp.Data
 @using CondominioApp.Shared
@@ -7,21 +7,19 @@
 
 <div>
     <h3>UserDetails</h3>
+    <p>@user.Id</p>
     <p>@user.Email</p>
-    <p>@user.Password</p>
-    <p>@user.LastAccess.ToShortDateString()</p>
 </div>
 
 @code {
     [Parameter]
-    public int userId { get; set; }
+    public string userId { get; init; }
     private User user  { get; set; }
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         user = new User();
         userRepository = new UserRepository();
-        user = userRepository.GetUser(userId);
-        await Task.FromResult(1);
+        user = userRepository.GetUser(Int16.Parse(userId));
     }
 }
