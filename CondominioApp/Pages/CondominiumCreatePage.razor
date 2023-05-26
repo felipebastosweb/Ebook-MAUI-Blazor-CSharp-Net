@@ -1,0 +1,28 @@
+@page "/Condominiums/Create"
+
+@using CondominioApp.Data;
+
+<EditForm Model="condominium">
+    <h3 class="display-4">Cadastrar Condomínio</h3>
+    <div class="mb-3">
+        <label class="form-label">Responsável</label>
+        <InputText @bind-Value="condominium.ResponsibleCondominium" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Nome do Condomínio</label>
+        <InputText @bind-Value="condominium.Name" class="form-control" style="padding-bottom: 10px;" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Endereço</label>
+        <InputText @bind-Value="condominium.Address" class="form-control" style="padding-bottom: 10px;" />
+    </div>
+    <div class="d-grid gap-2">
+        <button @onclick="OnAccessButtonClick" type="submit" class="btn btn-lg btn-success">Acessar</button>
+    </div>
+</EditForm>
+
+
+@code
+{
+    public Condominium condominium { get; set; }
+}

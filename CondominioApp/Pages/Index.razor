@@ -3,39 +3,39 @@
 @using CondominioApp.Data
 @using CondominioApp.Shared
 
-@inject NavigationManager routering
-@inject UserRepository userRepository
+@inject NavigationManager Navigate
 
-<form method="post">
+<EditForm Model="user" method="post">
     <h3 class="display-4">Acesse sua conta</h3>
-    <div class="form-group">
+    <div class="mb-3">
         <label class="form-label">E-mail</label>
-        <input type="email" @bind-value="@user.Email" placeholder="seu-email@host.com" class="form-control" />
+        <InputText type="email" @bind-Value="user.Email" placeholder="seu-email@host.com" class="form-control" />
     </div>
-    <div class="form-group">
+    <div class="mb-3">
         <label class="form-label">Senha</label>
-        <input type="password" @bind-value="@user.Password" placeholder="sua senha" class="form-control" style="padding-bottom: 10px;" />
+        <InputText type="password" @bind-Value="user.Password" placeholder="sua senha" class="form-control" style="padding-bottom: 10px;" />
     </div>
-    <div class="form-group">
+    <div class="mb-3">
         <label style="word-wrap:break-word" >
-            <input type="checkbox" checked="checked" />
-            Salvar Acesso 
+            <InputCheckbox type="checkbox" @bind-Value="user.KeepConnected" checked="checked" class="form-control" />
+            Manter-se conectado
         </label>
         <p>&nbsp;</p>
     </div>
-    <div class="form-group">
+    <div class="mb-3">
         <p>
-            <a href="/">Recuperar a  Senha</a>
+            <a href="/recovery-password">Recuperar a  Senha</a>
         </p>
         <p>&nbsp;</p>
     </div>
     <div class="d-grid gap-2">
         <button @onclick="OnAccessButtonClick" type="submit" class="btn btn-lg btn-success">Acessar</button>
     </div>
-</form>
+</EditForm>
 
 @code {
     private User user { get; set; }
+    public UserRepository userRepository {get; set;};
 
     protected override void OnInitialized()
     {
@@ -47,13 +47,7 @@
     private void OnAccessButtonClick()
     {
         user = userRepository.CreateOrLogin(user);
-        // Bug rota formada mas não encontrada. Pelo NavLink funciona
-        routering.NavigateTo($"/user/{@user.Id}", forceLoad: true);
-        //navigator.NavigateTo($"userDetails/{@user.Id}", forceLoad: true);
-        //navigator.NavigateTo($"/userDetails/{@user.Id}", forceLoad: true);
-        //NavigationManager.NavigateTo($"userDetails/{@user.Id}", forceLoad: true);
-        //NavigationManager.NavigateTo($"/userDetails/{@user.Id}", forceLoad: true);
-        //await Task.FromResult(1);
+        Navigate.NavigateTo($"/user/{@user.Id}", forceLoad: true);
     }
 
 }

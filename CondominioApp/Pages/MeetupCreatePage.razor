@@ -1,0 +1,49 @@
+@page "/Meetups/Create"
+
+@using CondominioApp.Data;
+
+<EditForm Model="meetup">
+    <h3 class="display-4">Cadastrar Reunião</h3>
+    
+    <div class="mb-3">
+        <label class="form-label">Condomínio</label>
+        <p>@meetup.condominium.Name</p>
+        <p>Síndico: @meetup.condominium.trustee.Name</p>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Tipo de Reunião</label>
+        <InputSelect @bind-Value="meetup.meetupType" class="form-control">
+            @foreach(var type in meetupTypes)
+            {
+                <option value="@type.Id">@type.Name</option>
+            }
+        </InputSelect>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Assunto da Reunião</label>
+        <InputText @bind-Value="meetup.Title" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Conteúdo da Reunião</label>
+        <InputText @bind-Value="meetup.Content" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Data e Horário</label>
+        <InputDate @bind-Value="meetup.MeetingDate" class="form-control" Type="InputDateType.DateTimeLocal" min="@DateTime.Today.ToString("yyyy-MM-dd")" />
+    </div>
+</EditForm>
+
+@code
+{
+    [Parameter]
+    public Condominium condominium { get; set; }
+    public List<MeetupType> meetupTypes { get; set; } = new();
+    public Meetup meetup { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        meetup.Condominium = condominium;
+    }
+}
