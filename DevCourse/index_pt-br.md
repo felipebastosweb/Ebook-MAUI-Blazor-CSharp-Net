@@ -1,7 +1,7 @@
 # Criação de Aplicativo para Condomínio em C# com MAUI e Blazor
 
 ## Sumário
- - [Instalação da IDE e Ferramentas](https://github.com/felipebastosweb/CondominioApp/tree/master/DevCourse/)
+ - [Instalação da IDE e Ferramentas](https://github.com/felipebastosweb/CondominioApp/tree/master/DevCourse/installing-the-ide-and-tools_pt-br.md)
  - [Criação do Aplicativo Mobile (MAUI Blazor)](https://github.com/felipebastosweb/CondominioApp/tree/master/DevCourse/)
  - [Criação de Páginas](https://github.com/felipebastosweb/CondominioApp/tree/master/DevCourse/)
  - [Criação de Formulários](https://github.com/felipebastosweb/CondominioApp/tree/master/DevCourse/)
