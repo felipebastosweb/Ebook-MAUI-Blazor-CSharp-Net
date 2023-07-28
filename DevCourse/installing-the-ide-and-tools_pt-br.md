@@ -11,5 +11,15 @@ Acesse o site oficial da Microsoft (https://visualstudio.microsoft.com/pt-br/vs/
 
 ## Passo 2: Executar o Instalador
 
-Após o download, localize o arquivo "VisualStudioCommunity.exe" e execute-o como administrador. Isso é importante para garantir que o processo de instalação tenha as permissões necessárias.
+Após o download, localize o arquivo "VisualStudioSetup.exe" e execute-o. Caso você esteja usando o Windows é provável que o sistema operacional solicite permissão de Administrador. Isso é importante para garantir que o processo de instalação tenha as permissões necessárias. Irá se abrir a tela do instalador disponibilizando as versões Release e Preview. Você deve escolar a versão Release que é a versão oficial.
+
+![Foto do Instalador do Visual Studio Community 2022](https://github.com/felipebastosweb/CondominioApp/blob/master/DevCourse/uploads/images/visual-studio-installer-1.png "Tela para baixar o Visual Studio Release")
+
+Observação 1: A versão Preview é uma versão Beta com recursos no estágio de teste que deve ser usado apenas por quem deseja experimentar os futuros lançamentos. Você não deve usar a versão Preview para desenvolver produtos para os seus clientes ou usuários.
+
+Após escolher a versão release você deverá escolher quais pacotes de ferramentas deseja utilizar nos seus projetos.
+
+## Passo 3: Escolher Componentes
+
+Na tela inicial do instalador, você verá uma lista de cargas de trabalho e componentes individuais disponíveis para instalação. As "cargas de trabalho" são conjuntos de ferramentas e recursos destinados a tipos específicos de desenvolvimento, como desenvolvimento para desktop, desenvolvimento web, desenvolvimento móvel, etc. Selecione as cargas de trabalho e os componentes que atendam às suas necessidades e clique em "Instalar" para continuar.
 
