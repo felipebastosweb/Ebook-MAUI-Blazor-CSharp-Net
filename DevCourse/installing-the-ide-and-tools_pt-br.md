@@ -23,3 +23,27 @@ Após escolher a versão release você deverá escolher quais pacotes de ferrame
 
 Na tela inicial do instalador, você verá uma lista de cargas de trabalho e componentes individuais disponíveis para instalação. As "cargas de trabalho" são conjuntos de ferramentas e recursos destinados a tipos específicos de desenvolvimento, como desenvolvimento para desktop, desenvolvimento web, desenvolvimento móvel, etc. Selecione as cargas de trabalho e os componentes que atendam às suas necessidades e clique em "Instalar" para continuar.
 
+
+
+## Passo 4: Configurações Adicionais (opcional)
+
+Você pode personalizar algumas configurações durante a instalação, como o local da instalação, temas e outras opções. Se desejar, faça as alterações necessárias e clique em "Instalar" para prosseguir.
+
+
+
+## Passo 5: Aguardar a Instalação
+
+O instalador começará a baixar e instalar os componentes selecionados. O tempo de instalação pode variar dependendo das opções escolhidas e da velocidade da sua conexão com a internet. Aguarde até que a instalação seja concluída.
+
+
+## Passo 6: Concluir a Instalação
+
+Após a instalação estar completa, você verá uma tela informando que o Visual Studio Community foi instalado com sucesso. Clique no botão "Iniciar" para abrir o IDE.
+
+
+
+## Passo 7: Configuração Inicial
+
+Na primeira execução, o Visual Studio Community pode solicitar algumas configurações iniciais, como a seleção de um tema de cores e a personalização da experiência do usuário. Faça as configurações de acordo com suas preferências.
+
+Parabéns! Agora você tem o Visual Studio Community instalado em seu computador e está pronto para começar a desenvolver seus projetos. O Visual Studio Community oferece uma ampla gama de recursos e ferramentas poderosas para aprimorar sua produtividade no desenvolvimento de software. Explore a documentação, tutoriais e a comunidade para tirar o máximo proveito dessa excelente ferramenta de desenvolvimento. Happy coding!
