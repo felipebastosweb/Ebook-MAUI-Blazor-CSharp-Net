@@ -21,15 +21,15 @@ Após escolher a versão release você deverá escolher quais pacotes de ferrame
 
 ## Passo 3: Escolher Componentes
 
-Na tela inicial do instalador, você verá uma lista de cargas de trabalho e componentes individuais disponíveis para instalação. As "cargas de trabalho" são conjuntos de ferramentas e recursos destinados a tipos específicos de desenvolvimento, como desenvolvimento para desktop, desenvolvimento web, desenvolvimento móvel, etc. Selecione as cargas de trabalho e os componentes que atendam às suas necessidades e clique em "Instalar" para continuar.
+Na tela inicial do instalador, você verá uma lista de cargas de trabalho e componentes individuais disponíveis para instalação. As "cargas de trabalho" são conjuntos de ferramentas e recursos destinados a tipos específicos de desenvolvimento, como: Desenvolvimento web, Desenvolvimento .Net Multiplataforma App UI (MAUI), desenvolvimento para desktop, desenvolvimento plataforma Universal do Windows, Processamento e armazenamento de dados, etc. Selecione as cargas de trabalho e os componentes que atendam às suas necessidades e clique em "Instalar durante o download" para continuar. Voce pode escolher também a opção "baixar tudo, depois instalar".
 
+![Tela de escolha de ferramentas](https://github.com/felipebastosweb/CondominioApp/blob/master/DevCourse/uploads/images/visual-studio-installer-2.png "Tela para escolher os componentes")
 
+Muitos desses componentes são pesados (baixar alguns GB) e também ocupam muito espaço em disco, então selecione eles de acordo com sua velocidade de Internet e observando quanto tempo vai espaço em disco vai ocupar. Sempre que precisar, voce pode voltar para o aplicativo Installer que já vai estar instalado no seu computador e poderá clicar em "Modificar" para adicionar ou remover componentes. Caso voce precise de um componente específico poderá procurar ele em "Componentes Adicionais" e instalar esse componente.
 
 ## Passo 4: Configurações Adicionais (opcional)
 
-Você pode personalizar algumas configurações durante a instalação, como o local da instalação, temas e outras opções. Se desejar, faça as alterações necessárias e clique em "Instalar" para prosseguir.
-
-
+Você pode personalizar algumas configurações durante a instalação, como o pacote de idiomas e o local da instalação, temas e outras opções. Se desejar, faça as alterações necessárias e clique em "Instalar durante o download" para prosseguir.
 
 ## Passo 5: Aguardar a Instalação
 
