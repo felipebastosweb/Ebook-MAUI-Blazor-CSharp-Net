@@ -52,3 +52,20 @@ Nomenclatura descritiva: Os subdiretórios como "Forms", "Cards", "Lists" e "Til
 Escalabilidade: Com a estrutura de diretórios mais detalhada e organizada, o projeto está melhor preparado para lidar com o crescimento e a adição de novas funcionalidades, tornando-o mais escalável.
 
 Em resumo, a sugestão atual de diretórios para o projeto Blazor MAUI oferece uma organização mais eficiente, maior clareza na nomenclatura e uma melhor separação de responsabilidades entre os arquivos. Isso torna o desenvolvimento mais ágil e facilita a colaboração entre membros da equipe, resultando em um projeto mais robusto e fácil de manter no longo prazo.
+
+## Anatomia de uma Página
+
+Uma página de um aplicativo híbrido mobile utilizando MAUI com blazor deve ter código HTML e C#, e algumas tags Asp.NET. As páginas são divididas em duas seções, a parte Asp.Net e a parte C#, podendo conter também a parte CSS em um arquivo separado (de forma um pouco parecida com o framework Vue.JS, caso você já tenha trabalhado com Javascript). 
+
+Vejamos como fica a nossa página principal descrita no componente Index.razor.
+
+### Código "Asp.NEt"
+
+
+### Código C#
+
+
+## Separando os códigos Asp.Net e C#
+
+
+
