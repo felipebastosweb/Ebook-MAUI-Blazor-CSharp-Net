@@ -37,3 +37,18 @@ Pages/Forms: Aqui, coloque as páginas relacionadas a formulários e entradas de
 Pages/Cards: Neste diretório, coloque as páginas que exibem informações em cartões ou cards, proporcionando uma melhor separação de layout.
 Pages/Lists: Para páginas que apresentam listas de itens, utilize este diretório para mantê-las organizadas.
 Pages/Tiles: Caso a aplicação use tiles ou blocos como interface, este diretório é ideal para armazenar as páginas relacionadas.
+
+## Comparação e Melhorias
+
+A sugestão de diretórios padrão não é tão detalhada em relação à organização dos arquivos específicos. A atual sugestão fornece uma divisão mais clara e estruturada dos arquivos, o que facilita a localização e a manutenção dos mesmos.
+
+As melhorias na nova sugestão incluem:
+Melhor organização: O modelo atual propõe um agrupamento mais claro dos arquivos relacionados a dados, páginas e componentes, tornando o projeto mais organizado e de fácil manutenção.
+
+Separação de camadas: Ao dividir os arquivos de dados em "Models", "Repositories" e "Services", conseguimos separar melhor a camada de dados da lógica de negócio, promovendo um código mais modular e fácil de entender.
+
+Nomenclatura descritiva: Os subdiretórios como "Forms", "Cards", "Lists" e "Tiles" fornecem uma nomenclatura mais descritiva, o que torna o propósito das páginas mais claro e ajuda a identificar rapidamente o que cada parte da aplicação representa.
+
+Escalabilidade: Com a estrutura de diretórios mais detalhada e organizada, o projeto está melhor preparado para lidar com o crescimento e a adição de novas funcionalidades, tornando-o mais escalável.
+
+Em resumo, a sugestão atual de diretórios para o projeto Blazor MAUI oferece uma organização mais eficiente, maior clareza na nomenclatura e uma melhor separação de responsabilidades entre os arquivos. Isso torna o desenvolvimento mais ágil e facilita a colaboração entre membros da equipe, resultando em um projeto mais robusto e fácil de manter no longo prazo.
