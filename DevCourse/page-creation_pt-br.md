@@ -105,6 +105,98 @@ Dentro do componente MeuComponente, você pode definir parâmetros que podem ser
 
 Por meio da utilização de componentes Razor, você pode criar interfaces de usuário altamente reutilizáveis, simplificar a manutenção do código e promover uma arquitetura mais organizada em seus projetos Blazor MAUI.
 
+~~~
+<!-- PaginaInicial.razor -->
+@page "/"
 
+<h3>Bem-vindo ao Aplicativo de Condomínio</h3>
+
+<div class="container">
+    <div class="row">
+        <!-- Botão para Avisos -->
+        <div class="col-md-3">
+            <button class="btn btn-primary btn-block" @onclick="IrParaAvisos">
+                <img src="images/avisos_icon.png" alt="Ícone Avisos" class="btn-icon" />
+                Avisos
+            </button>
+        </div>
+
+        <!-- Botão para 2ª Via de Boletos -->
+        <div class="col-md-3">
+            <button class="btn btn-primary btn-block" @onclick="IrParaSegundaViaBoletos">
+                <img src="images/boletos_icon.png" alt="Ícone 2ª Via de Boletos" class="btn-icon" />
+                2ª Via de Boletos
+            </button>
+        </div>
+
+        <!-- Botão para Reuniões -->
+        <div class="col-md-3">
+            <button class="btn btn-primary btn-block" @onclick="IrParaReunioes">
+                <img src="images/reunioes_icon.png" alt="Ícone Reuniões" class="btn-icon" />
+                Reuniões
+            </button>
+        </div>
+
+        <!-- Botão para Reservas de Áreas Comuns -->
+        <div class="col-md-3">
+            <button class="btn btn-primary btn-block" @onclick="IrParaReservasAreasComuns">
+                <img src="images/reservas_icon.png" alt="Ícone Reservas de Áreas Comuns" class="btn-icon" />
+                Reservas de Áreas Comuns
+            </button>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <!-- Botão para Contato com a Administração -->
+        <div class="col-md-3">
+            <button class="btn btn-primary btn-block" @onclick="IrParaContatoAdministracao">
+                <img src="images/contato_icon.png" alt="Ícone Contato com a Administração" class="btn-icon" />
+                Contato com a Administração
+            </button>
+        </div>
+
+        <!-- Botão para Notificações -->
+        <div class="col-md-3">
+            <button class="btn btn-primary btn-block" @onclick="IrParaNotificacoes">
+                <img src="images/notificacoes_icon.png" alt="Ícone Notificações" class="btn-icon" />
+                Notificações
+            </button>
+        </div>
+
+        <!-- Botão para Reservas de Espaços -->
+        <div class="col-md-3">
+            <button class="btn btn-primary btn-block" @onclick="IrParaReservasEspacos">
+                <img src="images/espacos_icon.png" alt="Ícone Reservas de Espaços" class="btn-icon" />
+                Reservas de Espaços
+            </button>
+        </div>
+
+        <!-- Botão para Manutenções -->
+        <div class="col-md-3">
+            <button class="btn btn-primary btn-block" @onclick="IrParaManutencoes">
+                <img src="images/manutencoes_icon.png" alt="Ícone Manutenções" class="btn-icon" />
+                Manutenções
+            </button>
+        </div>
+    </div>
+</div>
+
+@code {
+    // Lógica para redirecionar para os diferentes recursos
+    private void IrParaAvisos()
+    {
+        // Lógica para redirecionar para a página de Avisos
+        NavigationManager.NavigateTo("MinhaRotaAvisos");
+    }
+
+    private void IrParaSegundaViaBoletos()
+    {
+        // Lógica para redirecionar para a página de 2ª Via de Boletos
+        NavigationManager.NavigateTo("MinhaRotaSegundaViaBoletos");
+    }
+
+    // Continuar com a lógica para os outros recursos...
+}
+~~~
 
 
