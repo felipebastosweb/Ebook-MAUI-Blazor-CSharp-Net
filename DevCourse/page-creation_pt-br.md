@@ -1,3 +1,7 @@
+# MAUI e MAUI Blazor
+
+Diferente de um aplicativo MAUI .Net que é baseado em Xamarin e sua estrutura segue o modelo MVVM (Model View ViewModel) e as Views são construídas através de arquivos XAML e XAML.cs, existe uma camada de visualização construída com o componente BlazorWebView que permite exibir componentes Razor com o mesmo poder do código C# nativo.
+
 # Estruturação do Projeto e Criação de Páginas
 
 Ao criar um projeto Blazor .NET MAUI no Visual Studio Community, você encontrará uma estrutura de diretórios e arquivos bem organizada para facilitar o desenvolvimento da aplicação. Vamos explorar os arquivos obrigatórios e opcionais presentes na estrutura padrão do projeto Blazor MAUI. A princípio, sugiro que não altere a formatação dos arquivos existentes a não ser que você saiba o que está fazendo.
