@@ -55,7 +55,7 @@ Em resumo, a sugestão atual de diretórios para o projeto Blazor MAUI oferece u
 
 ## Anatomia de uma Página
 
-Uma página de um aplicativo híbrido mobile utilizando MAUI com blazor deve ter código HTML e C#, e algumas tags Asp.NET. As páginas são divididas em duas seções, a parte Asp.Net e a parte C#, podendo conter também a parte CSS em um arquivo separado (de forma um pouco parecida com o framework Vue.JS, caso você já tenha trabalhado com Javascript). 
+Uma página de um aplicativo híbrido mobile utilizando MAUI com Blazor deve ter código HTML e C#, e algumas tags Asp.NET. As páginas são divididas em duas seções, a parte Asp.Net e a parte C#, podendo conter também a parte CSS em um arquivo separado (de forma um pouco parecida com o framework Vue.JS, caso você já tenha trabalhado com Javascript). 
 
 Vejamos como fica a nossa página principal descrita no componente Index.razor.
 
