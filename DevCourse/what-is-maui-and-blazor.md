@@ -54,7 +54,9 @@ Pontos Fracos:
 
 Performance: Devido à abordagem baseada em web, os aplicativos Ionic podem ter desempenho inferior em comparação com aplicativos nativos.
 Interface Menos Nativa: Assim como o React Native, o Ionic pode não atingir a mesma fluidez e aparência nativa.
-Conclusão:
+
+
+### Conclusão:
 
 A escolha entre .NET MAUI Blazor, React (Native) e Ionic dependerá das necessidades e preferências específicas de cada projeto. O .NET MAUI Blazor é a escolha para desenvolvedores familiarizados com C# e .NET, buscando interfaces ricas e nativas. O React Native é indicado para quem valoriza uma ampla comunidade e alta performance. O Ionic é ideal para desenvolvedores web que desejam desenvolver rapidamente aplicativos para múltiplas plataformas.
 
