@@ -7,13 +7,13 @@ Neste tutorial, vamos guiá-lo através do processo de instalação do Visual St
 
 Acesse o site oficial da Microsoft (https://visualstudio.microsoft.com/pt-br/vs/community/) e clique no botão "Baixar para Windows" ou para o sistema operacional que esteja usando (Linux ou MAC). Isso iniciará o download do instalador do Visual Studio Community para o seu computador. Caso deseja outra versão, clique no link (https://visualstudio.microsoft.com/pt-br/vs/). Veja um exemplo na imagem abaixo que mostra todas as versões.
 
-![Foto do Site oficial do Visual Studio 2022](https://github.com/felipebastosweb/CondominioApp/blob/master/DevCourse/uploads/images/visual-studio-site-1.png "Escolha uma versão da IDE Visual Studio para baixar (Community, Professional, ou Enterprise)")
+![Foto do Site oficial do Visual Studio 2022](uploads/images/visual-studio-site-1.png "Escolha uma versão da IDE Visual Studio para baixar (Community, Professional, ou Enterprise)")
 
 ## Passo 2: Executar o Instalador
 
 Após o download, localize o arquivo "VisualStudioSetup.exe" e execute-o. Caso você esteja usando o Windows é provável que o sistema operacional solicite permissão de Administrador. Isso é importante para garantir que o processo de instalação tenha as permissões necessárias. Irá se abrir a tela do instalador disponibilizando as versões Release e Preview. Você deve escolar a versão Release que é a versão oficial.
 
-![Foto do Instalador do Visual Studio Community 2022](https://github.com/felipebastosweb/CondominioApp/blob/master/DevCourse/uploads/images/visual-studio-installer-1.png "Tela para baixar o Visual Studio Release")
+![Foto do Instalador do Visual Studio Community 2022](uploads/images/visual-studio-installer-1.png "Tela para baixar o Visual Studio Release")
 
 Observação 1: A versão Preview é uma versão Beta com recursos no estágio de teste que deve ser usado apenas por quem deseja experimentar os futuros lançamentos. Você não deve usar a versão Preview para desenvolver produtos para os seus clientes ou usuários.
 
@@ -23,7 +23,7 @@ Após escolher a versão release você deverá escolher quais pacotes de ferrame
 
 Na tela inicial do instalador, você verá uma lista de cargas de trabalho e componentes individuais disponíveis para instalação. As "cargas de trabalho" são conjuntos de ferramentas e recursos destinados a tipos específicos de desenvolvimento, como: Desenvolvimento web, Desenvolvimento .Net Multiplataforma App UI (MAUI), desenvolvimento para desktop, desenvolvimento plataforma Universal do Windows, Processamento e armazenamento de dados, etc. Selecione as cargas de trabalho e os componentes que atendam às suas necessidades e clique em "Instalar durante o download" para continuar. Voce pode escolher também a opção "baixar tudo, depois instalar".
 
-![Tela de escolha de ferramentas](https://github.com/felipebastosweb/CondominioApp/blob/master/DevCourse/uploads/images/visual-studio-installer-2.png "Tela para escolher os componentes")
+![Tela de escolha de ferramentas](uploads/images/visual-studio-installer-2.png "Tela para escolher os componentes")
 
 Muitos desses componentes são pesados (baixar alguns GB) e também ocupam muito espaço em disco, então selecione eles de acordo com sua velocidade de Internet e observando quanto tempo vai espaço em disco vai ocupar. Sempre que precisar, voce pode voltar para o aplicativo Installer que já vai estar instalado no seu computador e poderá clicar em "Modificar" para adicionar ou remover componentes. Caso voce precise de um componente específico poderá procurar ele em "Componentes Adicionais" e instalar esse componente.
 
