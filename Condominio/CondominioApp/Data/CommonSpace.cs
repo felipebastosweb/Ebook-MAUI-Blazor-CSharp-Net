@@ -22,7 +22,7 @@ namespace CondominioApp.Data
         public string Description { get; set; }
         public int Capacity { get; set; }
         [Ignore] public virtual List<CondominiumSpaceItem> SpaceItemList { get; set; }
+        [Ignore] public virtual List<Fee> FeeList { get; set; }
         [Ignore] public virtual List<CondominiumSpaceReservation> ReservationList { get; set; }
     }
-
 }
