@@ -17,7 +17,8 @@ public class Espaco : BaseModel
     public string Descricao { get; set; } = string.Empty;
     public int Capacity { get; set; }
     public virtual List<EspacoItem> EspacoItemList { get; set; }
-    public virtual List<Taxa> Taxas { get; set; }
+    //public virtual List<Taxa> Taxas { get; set;
+    //TODO: criar uma classe para Espaco com Preço onde serão cobrados as taxas de reserva, limpeza, etc. e a classe EspacoItem para os itens que compõem o espaço (ex: cadeiras, mesas, etc.)
     public virtual List<Reserva> Reservas { get; set; }
 }
 

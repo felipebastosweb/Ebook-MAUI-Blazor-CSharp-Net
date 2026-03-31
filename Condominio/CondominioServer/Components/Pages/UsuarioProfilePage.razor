@@ -1,0 +1,25 @@
+﻿@page "/user/{userId}"
+
+@rendermode InteractiveServer
+
+@using CondominioServer.Data.Models
+@using CondominioServer.Data.Repositories
+
+[Authorize(Roles = ["Admin", "Sindico", "Proprietario", "Inquilino"])]
+
+<div>
+    <h3>UserDetails</h3>
+    <p>@UsuarioLogado.Id.ToString()</p>
+    <p>@UsuarioLogado.Email</p>
+</div>
+
+@code {
+    [Parameter]
+    public string UsuarioId { get; init; }
+    private Usuario UsuarioLogado { get; set; } = null!;
+
+    protected override void OnInitialized()
+    {
+        //user = userRepository.GetUser(Int16.Parse(userId));
+    }
+}

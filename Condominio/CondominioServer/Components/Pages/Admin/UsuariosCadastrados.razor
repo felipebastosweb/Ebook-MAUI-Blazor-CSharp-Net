@@ -1,0 +1,39 @@
+﻿@page "/users"
+
+@using CondominioServer.Data.Models
+
+
+<h3>Usuarios</h3>
+
+@if (UsuarioList.Count() < 1)
+{
+    <p><em>Nenhum usuário no banco de dados.</em></p>
+}
+else
+{
+    <table class="table">
+        <tbody>
+            @foreach (var user in UsuarioList)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td><a href="user/@user.Id">@user.Email</a></td>
+                    <td><button @onclick="()=>OnDeleteButtonClick(user)" class"btn btn-danger">Apagar</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Usuario> UsuarioList { get; set; } = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+    }
+
+    public void OnDeleteButtonClick(Usuario user)
+    {
+    }
+
+}

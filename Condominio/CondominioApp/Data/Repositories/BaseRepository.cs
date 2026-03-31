@@ -1,32 +1,38 @@
-﻿Nomespace CondominioApp.Data.Repositories;
-
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using CondominioApp.Data.Models;
 using SQLite;
 
-public class BaseRepository<T>
+namespace CondominioApp.Data.Repositories
 {
-    public static SQLiteAsyncConnection db;
-
-    public static async Task Init()
+    public class BaseRepository<T> where T : class, new()
     {
-        if (db is not null)
+        public static SQLiteAsyncConnection db;
+
+        public static async Task Init()
         {
-            return db;
+            if (db is not null)
+            {
+                return;
+            }
+
+            var dbPath = Path.Combine(
+                Environment.GetFolderPath(
+                    Environment.SpecialFolder.LocalApplicationData), "condominium.db");
+
+            db = new SQLiteAsyncConnection(dbPath);
+
+            await db.CreateTableAsync<Usuario>();
+            await db.CreateTableAsync<Condominio>();
+            await db.CreateTableAsync<Unidade>();
         }
 
-        var dbPath = Path.Combine(
-            Environment.GetFolderPath(
-                Environment.SpecialFolder.LocalApplicationData), "condominium.db");
-        db = await new SQLiteAsyncConnection(dbPath);
-
-        db.CreateTable<Usuario>();
-        db.CreateTable<Condominio>();
-        db.CreateTable<Unidade>();
-    }
-
-    public static async Task<List<T>> ListAll()
-    {
-        
+        public static async Task<List<T>> ListAll()
+        {
+            await Init();
+            return await db.Table<T>().ToListAsync();
+        }
     }
 }

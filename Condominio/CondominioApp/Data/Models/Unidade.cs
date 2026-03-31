@@ -6,10 +6,10 @@ namespace CondominioApp.Data.Models;
 public class Unidade : AuditModel
 {
     public string Nome { get; set; } = string.Empty;
-    public string Proprietario { get; set; }
-    public string Telefone { get; set; }
-    public string Email { get; set; }
+    public string Proprietario { get; set; } = string.Empty;
+    public string Telefone { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
     // BelongsTo Condominio
-    public int CodominioId { get; set; }
-    public virtual Condominio Codominio { get; set; } = null!;
+    public int CondominioId { get; set; }
+    public virtual Condominio Condominio { get; set; } = null!;
 }

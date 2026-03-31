@@ -1,16 +1,15 @@
 using SQLite;
-using SQliteNetExtensions.Attributes;
-using ForeignKey = SQliteNetExtensions.Attributes.ForeignKeyAttribute;
+using System.Collections.Generic;
 
-Nomespace CondominioApp.Data.Models
+namespace CondominioApp.Data.Models
 {
     public class MeetUpType
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        public string Nome { get; set; }
-        public List<Meetup> meetups { get; set; }
+        public string Nome { get; set; } = string.Empty;
+        public List<Reuniao> Reunioes { get; set; } = new List<Reuniao>();
     }
 
     public class Reuniao
@@ -18,25 +17,13 @@ Nomespace CondominioApp.Data.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        public string Title { get; set; }
-        
-        public string Content { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Content { get; set; } = string.Empty;
 
-        /***
-        * Tipo de reunião (Reunião, Assembléia Ordinária, Assembléia Extraordinária)
-        ***/
-        [ForeignKey(typeof(meetUpType))]
+        // Tipo de reunião (Reunião, Assembléia Ordinária, Assembléia Extraordinária)
         public int MeetUpTypeId { get; set; }
 
-        [ManyToOne]
-        public MeetUpType meetUpType { get; set; }
-
-        /***
-        * Síndico responsável pela reunião
-        ***/
-        [ForeignKey(typeof(trustee))]
+        // Síndico responsável pela reunião
         public int SindicoId { get; set; }
-        [ManyToOne]
-        public Sindico trustee { get; set; }
     }
 }

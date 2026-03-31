@@ -22,7 +22,7 @@
             @foreach (var passkey in currentPasskeys)
             {
                 <tr>
-                    <td>@(passkey.Nome ?? "Unnamed passkey")</td>
+                    <td>@(passkey.Name ?? "Unnamed passkey")</td>
                     <td>
                         @{
                             var credentialId = Base64Url.EncodeToString(passkey.CredentialId);

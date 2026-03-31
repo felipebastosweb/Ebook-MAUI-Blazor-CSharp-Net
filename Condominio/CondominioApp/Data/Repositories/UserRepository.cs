@@ -1,56 +1,61 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace CondominioApp.Data.Repositories;
+
 using CondominioApp.Data.Models;
 using SQLite;
 
-Nomespace CondominioApp.Data.Repositories
+
+public class UserRepository
 {
+    public UserRepository() { }
 
-    public class UserRepository : DataRepository
+    public async Task<Usuario?> CreateOrLoginAsync(Usuario user)
     {
-        public UserRepository() : base() { }
+        await BaseRepository<Usuario>.Init();
+        var db = BaseRepository<Usuario>.db;
 
-        public User CreateOrLogin(User user)
-        {
-            var rows = 0;
-            var aux = db.Table<User>()
-                .Where(x => x.Email == user.Email)
-                .Where(x => x.Password == user.Password)
-                .FirstOrDefault();
-            if (aux == null)
-            {
-                user.LastAccess = DateTime.Now;
-                rows = db.Insert(user);
-            }
-            else 
-            aux.LastAccess = DateTime.Now;
-            rows = db.Update(aux);
-            return db.Table<User>()
-                .Where(x => x.Email == user.Email)
-                .FirstOrDefault();
-        }
-        public User GetUser(int i)
-        {
-            return db.Table<User>().FirstOrDefault(x => x.Id == i);
-        }
+        var aux = await db.Table<Usuario>()
+            .Where(x => x.Email == user.Email)
+            .FirstOrDefaultAsync();
 
-        public User FindUserByEmail(string Email)
+        if (aux == null)
         {
-            var user = db.Table<User>().Where(x => x.Email == Email).FirstOrDefault();
+            user.UltimoAcesso = DateTime.UtcNow;
+            await db.InsertAsync(user);
             return user;
         }
-
-        public List<User> GetUsers()
+        else
         {
-            return db.Table<User>().ToList();
+            aux.UltimoAcesso = DateTime.UtcNow;
+            await db.UpdateAsync(aux);
+            return aux;
         }
+    }
 
-        public int DeleteUser(User user)
-        {
-            return db.Delete(user);
-        }
+    public async Task<Usuario?> GetUserAsync(int id)
+    {
+        await BaseRepository<Usuario>.Init();
+        var db = BaseRepository<Usuario>.db;
+        return await db.Table<Usuario>().Where(x => x.Id == id).FirstOrDefaultAsync();
+    }
+
+    public async Task<Usuario?> FindUserByEmailAsync(string email)
+    {
+        await BaseRepository<Usuario>.Init();
+        var db = BaseRepository<Usuario>.db;
+        return await db.Table<Usuario>().Where(x => x.Email == email).FirstOrDefaultAsync();
+    }
+
+    public async Task<List<Usuario>> GetUsersAsync()
+    {
+        await BaseRepository<Usuario>.Init();
+        var db = BaseRepository<Usuario>.db;
+        return await db.Table<Usuario>().ToListAsync();
+    }
+
+    public async Task<int> DeleteUserAsync(Usuario user)
+    {
+        await BaseRepository<Usuario>.Init();
+        var db = BaseRepository<Usuario>.db;
+        return await db.DeleteAsync(user);
     }
 }

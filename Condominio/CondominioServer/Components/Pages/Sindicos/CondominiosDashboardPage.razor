@@ -1,0 +1,33 @@
+@page "/Sindico/Dashboard"
+
+@rendermode InteractiveServer
+
+@using CondominioServer.Data.Models;
+
+@attribute [Authorize(Roles = ["Admin", "Sindico"])]
+
+<h3>Condominios</h3>
+
+@if (Condominios.Count == 0)
+{
+    <p>Nenhum condomínio encontrado.</p>
+}
+else
+{
+    <ul>
+        @foreach (var condominio in Condominios)
+        {
+            <li>@condominio.Nome</li>
+        }
+    </ul>
+}
+
+@code
+{
+    public List<Condominio> Condominios { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+    }
+}

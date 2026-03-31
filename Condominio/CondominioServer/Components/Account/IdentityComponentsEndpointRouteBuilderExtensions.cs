@@ -131,7 +131,7 @@ namespace Microsoft.AspNetCore.Routing
                     prop => Attribute.IsDefined(prop, typeof(PersonalDataAttribute)));
                 foreach (var p in personalDataProps)
                 {
-                    personalData.Add(p.Nome, p.GetValue(user)?.ToString() ?? "null");
+                    personalData.Add(p.Name, p.GetValue(user)?.ToString() ?? "null");
                 }
 
                 var logins = await userManager.GetLoginsAsync(user);
