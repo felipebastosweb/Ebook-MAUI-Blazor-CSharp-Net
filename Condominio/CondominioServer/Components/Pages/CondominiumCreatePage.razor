@@ -1,0 +1,34 @@
+@page "/Condominios/Create"
+
+@using CondominioServer.Data.Models;
+
+<EditForm Model="NovoCondominio" OnSubmit="OnAccessButtonClick" Enhance>
+    <h3 class="display-4">Cadastrar Condomínio</h3>
+    <div class="mb-3">
+        <label class="form-label">Nome do Condomínio</label>
+        <InputText @bind-Value="NovoCondominio.Nome" class="form-control" style="padding-bottom: 10px;" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Endereço</label>
+        <InputText @bind-Value="NovoCondominio.Endereco" class="form-control" style="padding-bottom: 10px;" />
+    </div>
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-lg btn-success">Acessar</button>
+    </div>
+</EditForm>
+
+
+@code
+{
+    public Condominio NovoCondominio { get; set; } = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+    }
+
+    public void OnAccessButtonClick()
+    {
+        
+    }
+}

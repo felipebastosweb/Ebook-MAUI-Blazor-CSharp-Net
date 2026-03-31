@@ -1,0 +1,32 @@
+@page "/Condominios/<CondominioId : int>/Create"
+
+@using CondominioServer.Data.Models;
+@using CondominioServer.Data.Repositories;
+
+<EditForm Model="NovaUnidade">
+    <div class="mb-3">
+        <label class="form-label">Condomínio</label>
+        <p>@Condominio.Nome</p>
+        <p>Síndico: @Condominio.SindicoAtivo.Nome</p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Nome</label>
+        <InputText @bind-Value="NovaUnidade.Nome" class="form-control" />
+    </div>
+</EditForm>
+
+
+@code
+{
+    [Parameter]
+    public int CondominioId { get; set; }
+    public Condominio Condominio { get; set; }
+    public Unidade NovaUnidade { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        Condominio = repository.
+        unit.Condominio = Condominio;
+    }
+}

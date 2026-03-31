@@ -1,0 +1,25 @@
+﻿@page "/user/{userId}"
+
+@using CondominioServer.Data
+@using CondominioServer.Shared
+
+@inject UserRepository userRepository
+
+<div>
+    <h3>UserDetails</h3>
+    <p>@user.Id</p>
+    <p>@user.Email</p>
+</div>
+
+@code {
+    [Parameter]
+    public string userId { get; init; }
+    private User user  { get; set; }
+
+    protected override void OnInitialized()
+    {
+        user = new User();
+        userRepository = new UserRepository();
+        user = userRepository.GetUser(Int16.Parse(userId));
+    }
+}

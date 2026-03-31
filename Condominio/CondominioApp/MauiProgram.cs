@@ -1,24 +1,27 @@
-﻿using Microsoft.AspNetCore.Components.WebView.Maui;
-using CondominioApp.Data;
-using CondominioApp.Pages;
+﻿using Microsoft.Extensions.Logging;
 
-namespace CondominioApp;
-
-public static class MauiProgram
+namespace CondominioApp
 {
-	public static MauiApp CreateMauiApp()
-	{
-		var builder = MauiApp.CreateBuilder();
-		builder
-			.RegisterBlazorMauiWebView()
-			.UseMauiApp<App>()
-			.ConfigureFonts(fonts =>
-			{
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-			});
+    public static class MauiProgram
+    {
+        public static MauiApp CreateMauiApp()
+        {
+            var builder = MauiApp.CreateBuilder();
+            builder
+                .UseMauiApp<App>()
+                .ConfigureFonts(fonts =>
+                {
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                });
 
-		builder.Services.AddBlazorWebView();
-		builder.Services.AddSingleton<UserRepository>();
-		return builder.Build();
-	}
+            builder.Services.AddMauiBlazorWebView();
+
+#if DEBUG
+    		builder.Services.AddBlazorWebViewDeveloperTools();
+    		builder.Logging.AddDebug();
+#endif
+
+            return builder.Build();
+        }
+    }
 }
